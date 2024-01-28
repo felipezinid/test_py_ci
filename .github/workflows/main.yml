@@ -11,15 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ativar Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Instalar Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.9
 
       - name: Instalar Poetry
-        uses: Gr1N/setup-poetry@v4
+        uses: Gr1N/setup-poetry@v8
+      - run: poetry --version
 
       - name: Instalar Dependências
         run: poetry install
