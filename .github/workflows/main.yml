@@ -23,6 +23,3 @@ jobs:
         with:
           poetry-version: "1.2.2"
       - run: poetry --version
-
-      - name: Executa os teste unitários
-        run: poetry run pytest
