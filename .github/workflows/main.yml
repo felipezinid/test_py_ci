@@ -10,4 +10,4 @@ jobs:
 
     - name: Instalar Python
       uses: actions/setup-python@v2
-        python-version: 3.9w
+        python-version: 3.9v
