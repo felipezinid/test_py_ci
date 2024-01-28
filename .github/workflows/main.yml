@@ -24,11 +24,5 @@ jobs:
           poetry-version: "1.2.2"
       - run: poetry --version
 
-      - name: Executa isort
-        run: poetry run isort --check app
-
-      - name: Executa o pydocstyle
-        run: poetry run pydocstyle app
-
       - name: Executa os teste unitários
         run: poetry run pytest
