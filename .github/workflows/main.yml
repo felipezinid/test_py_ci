@@ -25,7 +25,7 @@ jobs:
       - run: poetry --version
 
       - name: Executa Black
-        run: poetry run black --check app
+        run: poetry run black app --check
 
       - name: Executa isort
         run: poetry run isort --check app
