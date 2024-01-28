@@ -1,35 +1,34 @@
-
 name: Integração Contínua
 
-on: push
+on:
+  push:
 
 jobs:
   test:
-  runs-on: ubuntu-latest
-  steps:
-			
-    - name: Ativar Checkout
-      uses: actions/checkout@v2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ativar Checkout
+        uses: actions/checkout@v2
 
-    - name: Instalar Python
-      uses: actions/setup-python@v2
-			with:
-        python-version: 3.9
+      - name: Instalar Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
 
-		- name: Instalar Poetry
-			uses: Gr1M/setup-poetry@v4
+      - name: Instalar Poetry
+        uses: Gr1M/setup-poetry@v4
 
-		- name: Instalar Dependências
-			run: poetry install
+      - name: Instalar Dependências
+        run: poetry install
 
-		- name: Executa Black
-			run: poetry run black --check app
+      - name: Executa Black
+        run: poetry run black --check app
 
-		- name: Executa isort
-			run: poetry run isort --check app
+      - name: Executa isort
+        run: poetry run isort --check app
 
-		- name: Executa o pydocstyle
-			run: poetry run pydocstyle app
+      - name: Executa o pydocstyle
+        run: poetry run pydocstyle app
 
-		- name: Executa os teste unitários
-			run: poetry run pytest
+      - name: Executa os teste unitários
+        run: poetry run pytest
