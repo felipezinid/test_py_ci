@@ -3,7 +3,7 @@ name: Integração Contínua
 on:
   pull_request:
     branches:
-      - main:
+      - main
   push:
 
 jobs:
